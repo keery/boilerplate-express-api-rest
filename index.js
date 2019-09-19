@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
 import logger from './logger';
+import setupRoutes from './routes';
 
 dotenv.config();
 
@@ -18,3 +19,5 @@ app.use(bodyParser.urlencoded({ extended : false }));
 app.listen(PORT, () => {
     logger.info(`App listening on port ${PORT}!`);
 });
+
+setupRoutes(app);
