@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import compression from 'compression';
 import bodyParser from 'body-parser';
 
 import logger from './logger';
@@ -13,6 +14,7 @@ const app = express();
 
 app.set('port', PORT || 8080);
 
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 
